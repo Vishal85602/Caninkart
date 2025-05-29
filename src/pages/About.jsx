@@ -6,15 +6,20 @@ import img6 from '../assets/doga1.png';
 import img7 from '../assets/dogaa.png'
 import img8 from '../assets/doga3.png';
 import img9 from '../assets/doga4.png'
+import ContactForm from '../components/contactForm';
 
 const CaninkartHome = () => {
   return (
-    <div className="font-sans text-gray-700">
+    
+    <div className="font-sans text-gray-700 bg-[#DEFED2] ">
       {/* ABOUT SECTION */}
-      <section className="py-5 px-4 bg-[#DEFED2] flex flex-col md:flex-row items-center justify-center gap-15">
-        <img src={pupy} alt="About Dog" className="h-66 mt-15" />
+
+          {/* <h2 className="text-sm font-semibold  bg-[#DEFED2] text-orange-500 text-center  ">🧡 ABOUT</h2> */}
+      <div className=''>
+        <h2 className="text-sm font-semibold  text-orange-500 text-center  py-2 ">🧡 ABOUT</h2>
+        <section className="py-5 px-4  flex flex-col md:flex-row items-center justify-center gap-15">
+        <img src={pupy} alt="About Dog" className="h-70 mt-" />
         <div>
-          <h2 className="text-sm font-semibold text-orange-500 mb-10">🧡 ABOUT</h2>
           <p className="text-sm max-w-md">
             As a leading manufacturer and exporter of pet accessories, Caninkart has gained a reputation for producing top-notch pet products that cater to the needs of pets of all shapes and sizes. Caninkart has been dedicated to creating innovative and practical pet products that enhance the lives of pets and their owners.
           </p>
@@ -22,10 +27,11 @@ const CaninkartHome = () => {
         </div>
       </section>
 
+      </div>
       {/* QUOTE SECTION */}
-      <section className="    items-center justify-center  " >
-        <div className="text-xl md:text-2xl lg:text-3xl font-semibold ">
-          <img src={img9} className='w-full ' />
+      <section className="      " >
+        <div className="">
+          <img src={img9} className='w-full h-120 ' />
         </div>
       </section>
 
@@ -34,42 +40,28 @@ const CaninkartHome = () => {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2  items-center">
           <img src={img6} alt="Dog" className="w-120  object-cover" />
           <div>
-            <p className="text-sm md:text-base  ">
+            <p className="text-sm md:text-base text-black ">
               
               As a pet owner, the quality and safety of the accessories and pet products you use for your pet is a top priority. When it comes to pet accessories, you want to be sure you are using only the best and most reliable products. That is why it is important to look for pet accessories made in India. Indian-made pet accessories provide a variety of benefits for pet owners. Caninkart pet accessories are the best and offer an even higher level of quality, making them an ideal choice for pet owners.
               As a pet owner, the quality and safety of the accessories and pet products you use for your pet is a top priority... [trimmed for brevity]
             </p>
           </div>
         </div>
-        <div className="mt-10 grid md:grid-cols-2 gap-10 items-center relative">
-          <p className="text-sm md:text-base">
+        <div className="mt-10   gap-10 items-center relative">
+          <div className="flex  gap-4 justify-center md:justify-end">
+            <img src={img7} alt="Dog" className="w-40 h-40 rounded-full object-cover md:absolute -top-5 right-30 " />
+            <img src={img8} alt="Dog" className="w-35 h-35 rounded-full object-cover md:absolute top-10 right-100" />
+          </div>
+          <p className="text-sm md:text-base text-black max-w-2xl">
           As a pet owner, the quality and safety of the accessories and pet products you use for your pet is a top priority. When it comes to pet accessories, you want to be sure you are using only the best and most reliable products. That is why it is important to look for pet accessories made in India. Indian-made pet accessories provide a variety of benefits for pet owners. Caninkart pet accessories are the best and offer an even higher level of quality, making them an ideal choice for pet owners.
           As a pet own<br/> Pet owners should always consider Caninkart pet accessories for their pets... [trimmed for brevity]
           </p>
-          <div className="flex gap-4 justify-center md:justify-end">
-            <img src={img7} alt="Dog" className="w-40 h-40 rounded-full object-cover absolute -top-5 right-30 " />
-            <img src={img8} alt="Dog" className="w-35 h-35 rounded-full object-cover absolute top-10 right-100" />
-          </div>
+          
         </div>
       </section>
 
       {/* CONTACT SECTION */}
-      <section className="py-10 px-4 bg-orange-50 text-center">
-        <h2 className="text-sm font-semibold text-orange-500 mb-2">🧡 CONTACT</h2>
-        <h3 className="text-lg font-bold mb-6">Contact Us</h3>
-
-        <div className="bg-cover bg-center bg-no-repeat h-96 flex items-center text-white max-w-5xl mx-auto relative rounded-2xl" style={{ backgroundImage: `url('src/assets/contact-dog.png')` }}>
-          <div className="absolute top-3 right-5">
-            <form className="bg-[#F0F2F3] p-6 rounded shadow-md w-full max-w-sm text-left space-y-3 text-black">
-              <input className="w-full border p-2 rounded text-black" type="text" placeholder="Your Name" />
-              <input className="w-full border p-2 rounded text-black" type="text" placeholder="Your Contact" />
-              <input className="w-full border p-2 rounded text-black" type="email" placeholder="Your Email" />
-              <textarea className="w-full border p-2 rounded" placeholder="Your Message" rows="3" />
-              <button className="w-full bg-orange-500 text-white py-2 rounded">SEND</button>
-            </form>
-          </div>
-        </div>
-      </section>
+      <ContactForm />
     </div>
   );
 };

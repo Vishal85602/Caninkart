@@ -3,11 +3,11 @@ import React from 'react'
 const ContactForm = () => {
     return (
         <>
-            <section className="py-10 px-4 bg-orange-50 text-center ">
+            <section className="py-10 px-4 bg-[#FDFDFD] text-center ">
                 <h2 className="text-sm font-semibold text-orange-500 mb-2">🧡 CONTACT</h2>
                 <h3 className="text-lg font-bold mb-6">Contact Us</h3>
 
-                <div className="bg-cover bg-center bg-no-repeat h-96 flex items-center  text-white  max-w-5xl mx-auto relative rounded-2xl border "
+                <div className="bg-cover bg-center bg-no-repeat h-110 flex items-center  text-white  max-w-7xl mx-auto relative rounded-2xl border "
                     style={{ backgroundImage: ` url('/src/assets/contact-dog.png')` }}>
                     <div className="absolute top-3 right-5">
                         <form className="bg-[#F0F2F3] p-6 rounded shadow-md w-full max-w-sm text-left space-y-3 text-black ">

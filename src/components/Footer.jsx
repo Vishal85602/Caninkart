@@ -6,7 +6,7 @@ import logo1 from '../assets/logo.png'
 const Footer = () => {
   return (
     <footer className="bg-white py-10 px-6 text-center text-sm border-t mt-10">
-      <div className="flex flex-col md:flex-row justify-between items-start max-w-6xl mx-auto gap-6 text-left">
+      <div className="flex flex-col md:flex-row justify-between items-start max-w-7xl mx-auto gap-6 text-left">
         <div>
           <img src={logo1} alt="Caninkart" className="h-10 mb-2" />
           <p>
