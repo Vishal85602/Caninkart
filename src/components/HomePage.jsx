@@ -20,7 +20,7 @@ const HomePage = () => {
     const topSellers = [
         { name: 'Lounge', img: img6 },
         { name: 'Cozy Bed', img: img6 },
-        { name: 'Cave Hut', img: img6},
+        { name: 'Cave Hut', img: img6 },
         { name: 'Travel Carrier', img: img6 },
     ];
     const products = [
@@ -105,67 +105,75 @@ const HomePage = () => {
 
 
             {/* Top Sellers */}
-            <section className="bg-[#E7EDE6] py-10 px-10 sm:px-6 lg:px-20 text-center">
-  <h2 className="text-sm font-semibold text-orange-500 mb-4">🔥 TOP SELLERS</h2>
+            <section className="bg-[#E7EDE6] py-10 px-4 sm:px-6 lg:px-20 text-center">
+                <h2 className="text-sm font-semibold text-orange-500 mb-4">🔥 TOP SELLERS</h2>
 
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-4 gap-6 max-w-8xl mx-auto">
-    {Array.from({ length: 8 }).map((_, idx) => {
-      const item = topSellers[idx % topSellers.length];
-      return (
-        <div key={idx} className="bg-white px-4 py-8 shadow-md rounded">
-          <img
-            src={item.img}
-            alt={item.name}
-            className="mx-auto h-20 md:h-28 object-contain"
-          />
-          <p className="text-xs mt-2 font-medium">{item.name}</p>
-        </div>
-      );
-    })}
-  </div>
-</section>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-4 gap-6 max-w-8xl mx-auto ">
+                    {Array.from({ length: 8 }).map((_, idx) => {
+                        const item = topSellers[idx % topSellers.length];
+                        return (
+                            <div
+                                key={idx}
+                                className="bg-white px-3 sm:px-4 md:px-5 lg:px-8 py-4 sm:py-6 md:py-4 shadow-md rounded"
+                            >
+
+                                <img
+                                    src={item.img}
+                                    alt={item.name}
+                                    className="mx-auto h-20 md:h-28 object-contain"
+                                />
+                                <p className="text-xs mt-2 font-medium">{item.name}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </section>
 
 
 
             {/* Promo Banner */}
-        <div className="w-full max-w-8xl mx-auto px-8">
-  <img src={img96} alt="Product" className="w-full h-auto object-contain" />
-</div>
+            <div className="w-full max-w-8xl mx-auto px-8">
+                <img src={img96} alt="Product" className="w-full h-auto object-contain" />
+            </div>
 
 
             {/* Products Section */}
             <section className="px-4 sm:px-6 md:px-10 lg:px-20 py-10 bg-[#E7EDE6] text-center">
-  <h2 className="font-semibold mb-4 text-lg text-orange-500">🛍️ Products</h2>
+                <h2 className="font-semibold mb-4 text-lg text-orange-500">🛍️ Products</h2>
 
-  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-4 gap-4 max-w-8xl mx-auto">
-    {Array.from({ length: 12 }).map((_, idx) => {
-      const product = products[idx % products.length];
-      return (
-        <div key={idx} className="bg-white p-6 shadow rounded">
-          <img src={product.img} alt={product.name} className="mx-auto h-24 sm:h-28 md:h-32 object-contain" />
-          <p className="text-xs mt-2 font-medium">{product.name}</p>
-        </div>
-      );
-    })}
-  </div>
-</section>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-4 gap-4 max-w-8xl mx-auto">
+                    {Array.from({ length: 12 }).map((_, idx) => {
+                        const product = products[idx % products.length];
+                        return (
+                            <div
+                                key={idx}
+                                className="bg-white px-2 sm:px-4 md:px-4 lg:px-8 py-4 sm:py-6 md:py-4 shadow-md rounded"
+                            >
+
+                                <img src={product.img} alt={product.name} className="mx-auto h-20 sm:h-28 md:h-32 object-contain" />
+                                <p className="text-xs mt-2 font-medium">{product.name}</p>
+                            </div>
+                        );
+                    })}
+                </div>
+            </section>
 
 
 
             {/* About */}
             <div className='bg-[#DEFED2]'>
-                    <h2 className="text-sm font-semibold  text-orange-500 text-center  py-2 ">🧡 ABOUT</h2>
-                    <section className="py-5 px-4  flex flex-col md:flex-row items-center justify-center gap-15">
+                <h2 className="text-sm font-semibold  text-orange-500 text-center  py-2 ">🧡 ABOUT</h2>
+                <section className="py-5 px-4  flex flex-col md:flex-row items-center justify-center gap-15">
                     <img src={pupy} alt="About Dog" className="h-80 w-110" />
                     <div>
-                      <p className="text-sm max-w-md">
-                        As a leading manufacturer and exporter of pet accessories, Caninkart has gained a reputation for producing top-notch pet products that cater to the needs of pets of all shapes and sizes. Caninkart has been dedicated to creating innovative and practical pet products that enhance the lives of pets and their owners.
-                      </p>
-                      <button className="mt-4 bg-red-500 text-white text-xs px-4 py-2 rounded">READ MORE</button>
+                        <p className="text-sm max-w-md">
+                            As a leading manufacturer and exporter of pet accessories, Caninkart has gained a reputation for producing top-notch pet products that cater to the needs of pets of all shapes and sizes. Caninkart has been dedicated to creating innovative and practical pet products that enhance the lives of pets and their owners.
+                        </p>
+                        <button className="mt-4 bg-red-500 text-white text-xs px-4 py-2 rounded">READ MORE</button>
                     </div>
-                  </section>
-            
-                  </div>
+                </section>
+
+            </div>
 
             {/* Testimonials */}
             <section className="bg-gray-100 py-10 text-center ">
@@ -211,7 +219,7 @@ const HomePage = () => {
 
                 </div>
             </section> */}
-         <ContactForm/>
+            <ContactForm />
 
 
 

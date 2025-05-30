@@ -5,7 +5,7 @@ import pupy from '../assets/pupy.png';
 import img6 from '../assets/doga1.png';
 import img7 from '../assets/dogaa.png'
 import img8 from '../assets/doga3.png';
-import img9 from '../assets/doga4.png'
+import img9 from '../assets/dogbg.png'
 import ContactForm from '../components/contactForm';
 
 const CaninkartHome = () => {
@@ -29,11 +29,18 @@ const CaninkartHome = () => {
 
       </div>
       {/* QUOTE SECTION */}
-      <section className="      " >
-        <div className="">
-          <img src={img9} className='w-full h-120 ' />
-        </div>
-      </section>
+      <section
+  className="bg-cover bg-center bg-no-repeat h-[400px] sm:h-[500px] md:h-[600px] w-full flex items-center justify-center px-4 sm:px-8"
+  style={{ backgroundImage: `url(${img9})` }}
+>
+  <div className="text-white text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold leading-relaxed max-w-4xl">
+    We understand that pets are more than just animals,
+   <br />they're  family members, which is why we prioritize the safety
+    and comfort of our furry customers.
+  </div>
+</section>
+
+
 
       {/* QUALITY SECTION */}
       <section className="bg-lime-100 py-16 px-4 md:px-20">

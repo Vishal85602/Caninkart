@@ -15,24 +15,31 @@ const Product = () => {
 
   return (
     <>
-    <div className="bg-[#ecf2e7] py-10 px-20 ">
-      <p className="text-center font-semibold text-lg mb-6">Products</p>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        {Productss.map((product) => (
-          <div
-            key={product.id}
-            className="bg-white rounded shadow p-4 text-center cursor-pointer hover:ring-2 ring-orange-300"
-            onClick={() => navigate(`/product/${product.id}`)}
-          >
-            <img src={product.image} alt="product" className="mx-auto w-24 h-24 object-contain" />
-            <p className="mt-2 text-sm">{product.name}</p>
-          </div>
-        ))}
+    <div className="bg-[#ecf2e7] px-4 sm:px-10 md:px-16 lg:px-10  py-6 sm:py-10">
+  <p className="text-center font-semibold text-lg mb-6">Products</p>
+  
+  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
+    {Productss.map((product) => (
+      <div
+        key={product.id}
+        className="bg-white rounded shadow p-4 lg:py-8 sm:p-3 text-center cursor-pointer hover:ring-2 ring-orange-300 transition duration-200"
+        onClick={() => navigate(`/product/${product.id}`)}
+      >
+        <img
+          src={product.image}
+          alt="product"
+          className="mx-auto w-35 h-20 md:w-40 sm:h-24 object-contain"
+        />
+        <p className="mt-2 text-sm">{product.name}</p>
       </div>
+    ))}
+  </div>
+</div>
+
 
       {/* Contact Section */}
       
-    </div>
+    
     <ContactForm />
     </>
   );

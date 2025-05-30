@@ -1,49 +1,83 @@
-import React from 'react';
-import { FaPaw } from 'react-icons/fa';
-import img10 from '../assets/dogb1.png'
+import React from "react";
+import lab1 from '../assets/dogb1.png' // Ensure the image exists at this path
 
 const dogs = [
-  { id: 1, image: img10 },
-  { id: 2, image: img10 },
-  { id: 3, image: img10 },
-  { id: 4, image: img10 },
-  { id: 5, image: img10 },
-  { id: 6, image: img10 },
+  {
+    number: "01",
+    image: lab1,
+    description:`Labrador
+Labradors are some of the most popular dogs around the world. Labradors are known for their loving and friendly personalities, intelligence, and loyalty. They are often used as service dogs, therapy dogs, and for companionship. Labradors are incredibly intelligent, making them great for training and teaching tricks. Labrador comes in three different colors – white, black, and chocolate – and have a unique double coat which sheds seasonally. Labrador is also one of the most popular breeds in India.`
+  },
+  {
+    number: "02",
+    image: lab1,
+    description: `Labrador
+Labradors are some of the most popular dogs around the world. Labradors are known for their loving and friendly personalities, intelligence, and loyalty. They are often used as service dogs, therapy dogs, and for companionship. Labradors are incredibly intelligent, making them great for training and teaching tricks. Labrador comes in three different colors – white, black, and chocolate – and have a unique double coat which sheds seasonally. Labrador is also one of the most popular breeds in India.`
+  },
+  {
+    number: "03",
+    image: lab1,
+    description: `Labrador
+Labradors are some of the most popular dogs around the world. Labradors are known for their loving and friendly personalities, intelligence, and loyalty. They are often used as service dogs, therapy dogs, and for companionship. Labradors are incredibly intelligent, making them great for training and teaching tricks. Labrador comes in three different colors – white, black, and chocolate – and have a unique double coat which sheds seasonally. Labrador is also one of the most popular breeds in India.`
+  },
+  {
+    number: "04",
+    image: lab1,
+    description:`Labrador
+Labradors are some of the most popular dogs around the world. Labradors are known for their loving and friendly personalities, intelligence, and loyalty. They are often used as service dogs, therapy dogs, and for companionship. Labradors are incredibly intelligent, making them great for training and teaching tricks. Labrador comes in three different colors – white, black, and chocolate – and have a unique double coat which sheds seasonally. Labrador is also one of the most popular breeds in India.`
+  }, 
+  {
+    number: "05",
+    image: lab1,
+    description:`Labrador
+Labradors are some of the most popular dogs around the world. Labradors are known for their loving and friendly personalities, intelligence, and loyalty. They are often used as service dogs, therapy dogs, and for companionship. Labradors are incredibly intelligent, making them great for training and teaching tricks. Labrador comes in three different colors – white, black, and chocolate – and have a unique double coat which sheds seasonally. Labrador is also one of the most popular breeds in India.`
+  }, 
+  {
+    number: "06",
+    image: lab1,
+    description:`Labrador
+Labradors are some of the most popular dogs around the world. Labradors are known for their loving and friendly personalities, intelligence, and loyalty. They are often used as service dogs, therapy dogs, and for companionship. Labradors are incredibly intelligent, making them great for training and teaching tricks. Labrador comes in three different colors – white, black, and chocolate – and have a unique double coat which sheds seasonally. Labrador is also one of the most popular breeds in India.`
+  },  
 ];
 
-const Breed = () => {
+const DogSection = ({ number, image, description, reverse }) => (
+  <div className={`grid md:grid-cols-2 gap-6 items-center py-10  ${reverse ? "md:flex-row-reverse" : ""}`}>
+    {!reverse && (
+      <img src={image} alt="Labrador" className="rounded w-full max-w-md mx-auto md:mx-0" />
+    )}
+
+    <div className="space-y-3 px-4">
+      <h1 className="text-5xl text-left font-bold text-[#CDDCEA]">{number}</h1>
+      <h2 className="text-4xl font-[Fredoka One] text-black">Labrador</h2>
+      <p className="font-[Poppins]  text-sm text-black leading-relaxed">{description}</p>
+    </div>
+<div>
+    {reverse && (
+      <img src={image} alt="Labrador" className="rounded-xl w-full max-w-md mx-auto md:mx-0" />
+    )}
+  </div>
+  </div>
+);
+
+function App() {
   return (
-    <section className="bg-[#FAF4ED] py-16 px-4 md:px-20 text-gray-800">
-      {/* Heading */}
-      <div className="text-center text-orange-500 font-semibold uppercase flex items-center justify-center gap-2 mb-10">
-        <FaPaw /> Know About Dog Breeds
+    <div className="bg-[#f9f5f3] text-gray-800 font-sans px-4 py-10">
+      <h2 className="text-center text-orange-500 text-sm font-semibold mb-10">
+        🐾 KNOW ABOUT DOG BREEDS
+      </h2>
+      <div className="max-w-7xl mx-auto space-y-10">
+        {dogs.map((dog, idx) => (
+          <DogSection
+            key={idx}
+            number={dog.number}
+            image={dog.image}
+            description={dog.description}
+            reverse={idx % 2 !== 0}
+          />
+        ))}
       </div>
-
-      {/* Dog Cards */}
-      {dogs.map((dog, index) => (
-        <div
-          key={dog.id}
-          className={`grid md:grid-cols-2 gap-10 mb-16 items-center ${
-            index % 2 !== 0 ? 'md:flex-row-reverse' : ''
-          }`}
-        >
-          <img src={dog.image} alt={`Dog ${index + 1}`} className="w-full max-w-sm mx-auto rounded-xl" />
-
-          <div>
-            <h2 className="text-blue-100 text-4xl font-bold mb-2 opacity-40">{`0${index + 1}`}</h2>
-            <h3 className="text-xl md:text-2xl font-bold mb-4">Labrador</h3>
-            <p className="text-sm md:text-base leading-relaxed">
-              Labradors are some of the most popular dogs around the world. Labradors are known for their loving and
-              friendly personalities, intelligence, and loyalty. They are often used as service dogs, therapy dogs, and
-              for companionship. Labradors are incredibly intelligent, making them great for training and teaching
-              tricks. Labrador comes in three different colors – white, black, and chocolate – and have a unique double
-              coat which sheds seasonally. Labrador is also one of the most popular breeds in India.
-            </p>
-          </div>
-        </div>
-      ))}
-    </section>
+    </div>
   );
-};
+}
 
-export default Breed;
+export default App;
