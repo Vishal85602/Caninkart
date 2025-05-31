@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import img99 from '../assets/mpd.png'; // Your hero background image
 import img100 from '../assets/mpd2.png'
 const cityNames = {
@@ -13,10 +13,16 @@ const cityNames = {
 function MarketPlacedetails() {
   const { cityId } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const cityname = location.state;
   const city = cityNames[cityId];
 
+ useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#FFFDF4] mt-18">
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center bg-no-repeat h-[400px] sm:h-[500px] md:h-[400px] w-full flex items-center justify-center px-4 sm:px-8"
@@ -31,7 +37,7 @@ function MarketPlacedetails() {
           </button>
         </div>
         <div className="text-white font-[Poppins] text-center text-xl sm:text-2xl md:text-3xl lg:text-5xl font-semibold leading-relaxed max-w-4xl">
-          Caninkart Manufacturers in Amritsar
+          Caninkart Manufacturers in {cityname.name}
         </div>
       </section>
 

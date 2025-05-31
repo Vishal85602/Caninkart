@@ -9,7 +9,7 @@ const BlogDetails = () => {
 
   return (
     <>
-      <div className="w-full mx-auto px-15 py-8 bg-[#EDEBE0]">
+      <div className="w-full mx-auto px-15 py-8 bg-[#EDEBE0] mt-16">
         {/* Back Button */}
         <div
           onClick={() => navigate(-1)} // Go back in history

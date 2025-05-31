@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { TfiArrowTopRight } from "react-icons/tfi";
@@ -33,11 +33,10 @@ const locations = [
 ];
 
 const Marketplace = () => {
-    //   const navigate = useNavigate();
 
-    //   const handleCityClick = (cityName) => {
-    //     navigate(`/marketplace/${cityName}`);
-    //   };
+     useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []);
 
     return (
         <div className="min-h-screen bg-black text-white">
@@ -51,7 +50,7 @@ const Marketplace = () => {
             </div>
 
             {/* City Grid */}
-            <div className="max-w-7xl mx-auto py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div className="max-w-7xl  md:mx-auto  mx-5 py-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                 {locations.map((city) => (
                     <div
                         key={city.id}
@@ -66,7 +65,7 @@ const Marketplace = () => {
                             <span className="text-sm font-medium mt-5">{city.name}</span>
                         </div>
 
-                        <Link to={`/marketplacedetails/${city.id}`} className="ml-4 underline text-blue-600">
+                        <Link to={`/marketplacedetails/${city.id}`} state={city} className="ml-4 underline text-blue-600">
                             <TfiArrowTopRight className="text-blue-200 text-5xl" />
                         </Link>
 

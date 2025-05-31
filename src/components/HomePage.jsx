@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FiSearch, FiPhone, FiMail } from "react-icons/fi";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import hero from '../assets/5dog.png'
@@ -55,13 +55,16 @@ const HomePage = () => {
             text: '“My golden retriever, Max, absolutely loves the chew toys I ordered. The quality is top-notch, and delivery was super fast. You’ve earned a customer for life!”',
         },
     ];
+    useEffect(() => {
+  window.scrollTo(0, 0);
+}, []);
 
 
     return (
         <div className="font-sans text-gray-800">
 
             {/* Hero Section */}
-            <section className="bg-orange-100 md:relative overflow-hidden px-4 py-20 text-center flex flex-col items-center">
+            <section className="bg-orange-100 md:relative overflow-hidden px-4 py-20 text-center flex flex-col items-center mt-16">
                 {/* Text Content */}
                 <div className="relative z-10 max-w-4xl mx-auto">
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4">

@@ -10,7 +10,7 @@ import {
 
 const ContactUs = () => {
   return (
-    <div className="bg-white py-10 px-6 md:px-20">
+    <div className="bg-white py-10 px-6 md:px-20 mt-16">
       {/* Header */}
       <div className="text-center mb-10">
         <p className="text-orange-500 font-semibold">📍CONTACT</p>
@@ -24,29 +24,29 @@ const ContactUs = () => {
           <h3 className="font-semibold text-lg mb-4">Do You Have Any Questions?</h3>
 
           {/* Name and Contact in one row on all screen sizes */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 bg-[#F0F2F3]">
             <input
               type="text"
               placeholder="Your Name"
-              className="p-2 rounded border w-full"
+              className="p-2 rounded border w-full bg-[#FFFAEF]"
             />
             <input
               type="text"
               placeholder="Your Contact"
-              className="p-2 rounded border w-full"
+              className="p-2 rounded border w-full bg-[#FFFAEF]"
             />
           </div>
 
           <input
             type="email"
             placeholder="Your Email"
-            className="p-2 rounded border w-full"
+            className="p-2 rounded border w-full bg-[#FFFAEF]"
           />
           <textarea
             placeholder="Your Message"
-            className="p-2 rounded border w-full h-28"
+            className="p-2 rounded border w-full h-28 bg-[#FFFAEF]"
           />
-          <button className="bg-orange-600 text-white px-6 py-2 rounded hover:bg-orange-700">
+          <button className="bg-[#BC5E38] text-white px-6 py-2 rounded hover:bg-orange-700">
             SEND
           </button>
         </div>
@@ -55,23 +55,25 @@ const ContactUs = () => {
         <div className="bg-gray-100 p-6 rounded-md shadow">
           <h3 className="font-semibold text-lg mb-4">Get In Touch</h3>
 
+         <p className="flex items-center gap-2 mb-2">
+  <FaEnvelope className="text-black bg-[#FDDF82] p-2 rounded-full text-4xl" />
+  <strong>Email:</strong> support@caninkart.com
+</p>
+ 
+
           <p className="flex items-center gap-2 mb-2">
-            <FaEnvelope className="text-orange-600" />
-            <strong>Email:</strong> support@caninkart.com
-          </p>
-          <p className="flex items-center gap-2 mb-2">
-            <FaPhone className="text-orange-600" />
+            <FaPhone className="text-black bg-[#FDDF82] p-2 rounded-full text-4xl" />
             <strong>Phone:</strong> +91 95209 57250
           </p>
           <p className="flex items-start gap-2 mb-4">
-            <FaMapMarkerAlt className="text-orange-600 mt-1" />
+            <FaMapMarkerAlt className="text-black bg-[#FDDF82] p-2 rounded-full text-4xl" />
             <strong>Address:</strong> 2220 Colorado Avenue, 5th Floor, Santa Monica California, USA
           </p>
 
-          <div className="flex gap-4 mt-4 text-xl text-orange-600">
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaYoutube /></a>
-            <a href="#"><FaInstagram /></a>
+          <div className="flex gap-4 mt-4 text-xl text-black  ">
+            <a className='bg-[#FDDF82] p-2 rounded-full text-4xl' href="#"><FaFacebookF /></a>
+            <a className='bg-[#FDDF82] p-2 rounded-full text-4xl' href="#"><FaYoutube /></a>
+            <a className='bg-[#FDDF82] p-2 rounded-full text-4xl' href="#"><FaInstagram /></a>
           </div>
         </div>
       </div>
