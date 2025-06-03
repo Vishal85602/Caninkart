@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
+import axios from 'axios';
 import {
   FaEnvelope,
   FaPhone,
@@ -9,6 +10,35 @@ import {
 } from 'react-icons/fa';
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    contact: '',
+    email: '',
+    message: '',
+  });
+
+  const [status, setStatus] = useState('');
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus('Sending...');
+
+    try {
+      const res = await axios.post('http://localhost:5000/api/contact', formData);
+      setStatus(res.data.message);
+      setFormData({ name: '', contact: '', email: '', message: '' });
+    } catch (error) {
+      setStatus(error.response?.data?.error || 'Something went wrong.');
+    }
+  };
+   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="bg-white py-10 px-6 md:px-20 mt-16">
       {/* Header */}
@@ -23,57 +53,81 @@ const ContactUs = () => {
         <div className="bg-gray-100 p-6 rounded-md space-y-4 shadow">
           <h3 className="font-semibold text-lg mb-4">Do You Have Any Questions?</h3>
 
-          {/* Name and Contact in one row on all screen sizes */}
-          <div className="grid grid-cols-2 gap-4 bg-[#F0F2F3]">
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="p-2 rounded border w-full bg-[#FFFAEF]"
-            />
-            <input
-              type="text"
-              placeholder="Your Contact"
-              className="p-2 rounded border w-full bg-[#FFFAEF]"
-            />
-          </div>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="grid grid-cols-2 gap-4 bg-[#F0F2F3]">
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your Name"
+                className="p-2 rounded border w-full bg-[#FFFAEF]"
+                required
+              />
+              <input
+                type="text"
+                name="contact"
+                value={formData.contact}
+                onChange={handleChange}
+                placeholder="Your Contact"
+                className="p-2 rounded border w-full bg-[#FFFAEF]"
+                required
+              />
+            </div>
 
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="p-2 rounded border w-full bg-[#FFFAEF]"
-          />
-          <textarea
-            placeholder="Your Message"
-            className="p-2 rounded border w-full h-28 bg-[#FFFAEF]"
-          />
-          <button className="bg-[#BC5E38] text-white px-6 py-2 rounded hover:bg-orange-700">
-            SEND
-          </button>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Your Email"
+              className="p-2 rounded border w-full bg-[#FFFAEF]"
+              required
+            />
+
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Your Message"
+              className="p-2 rounded border w-full h-28 bg-[#FFFAEF]"
+              required
+            />
+
+            <button
+              type="submit"
+              className="bg-[#BC5E38] text-white px-6 py-2 rounded hover:bg-orange-700"
+            >
+              SEND
+            </button>
+
+            {status && <p className="text-sm text-gray-600 mt-2">{status}</p>}
+          </form>
         </div>
 
-        {/* Get in Touch */}
+        {/* Get in Touch Info */}
         <div className="bg-gray-100 p-6 rounded-md shadow">
           <h3 className="font-semibold text-lg mb-4">Get In Touch</h3>
 
-         <p className="flex items-center gap-2 mb-2">
-  <FaEnvelope className="text-black bg-[#FDDF82] p-2 rounded-full text-4xl" />
-  <strong>Email:</strong> support@caninkart.com
-</p>
- 
+          <p className="flex items-center gap-2 mb-2">
+            <FaEnvelope className="text-black bg-[#FDDF82] p-2 rounded-full text-4xl" />
+            <strong>Email:</strong> support@caninkart.com
+          </p>
 
           <p className="flex items-center gap-2 mb-2">
             <FaPhone className="text-black bg-[#FDDF82] p-2 rounded-full text-4xl" />
             <strong>Phone:</strong> +91 95209 57250
           </p>
+
           <p className="flex items-start gap-2 mb-4">
             <FaMapMarkerAlt className="text-black bg-[#FDDF82] p-2 rounded-full text-4xl" />
             <strong>Address:</strong> 2220 Colorado Avenue, 5th Floor, Santa Monica California, USA
           </p>
 
-          <div className="flex gap-4 mt-4 text-xl text-black  ">
-            <a className='bg-[#FDDF82] p-2 rounded-full text-4xl' href="#"><FaFacebookF /></a>
-            <a className='bg-[#FDDF82] p-2 rounded-full text-4xl' href="#"><FaYoutube /></a>
-            <a className='bg-[#FDDF82] p-2 rounded-full text-4xl' href="#"><FaInstagram /></a>
+          <div className="flex gap-4 mt-4 text-xl text-black">
+            <a className="bg-[#FDDF82] p-2 rounded-full text-4xl" href="#"><FaFacebookF /></a>
+            <a className="bg-[#FDDF82] p-2 rounded-full text-4xl" href="#"><FaYoutube /></a>
+            <a className="bg-[#FDDF82] p-2 rounded-full text-4xl" href="#"><FaInstagram /></a>
           </div>
         </div>
       </div>

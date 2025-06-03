@@ -1,33 +1,37 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FiSearch, FiMenu, FiX } from "react-icons/fi";
-import logo from '../assets/logo.png';
+import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const navLinks = ["home", "product", "about", "blog", "contact"];
+
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white shadow-md ">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between ">
+    <nav className="fixed top-0 w-full z-50 bg-white shadow-md">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <NavLink to="/" className="flex items-center space-x-2">
           <img src={logo} alt="Caninkart Logo" className="h-10 w-auto" />
-          <span className="text-lg font-bold text-gray-800 tracking-wide hidden sm:inline">Caninkart</span>
         </NavLink>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-6 font-medium text-gray-700">
-          {["home", "product", "about", "blog", "contact"].map((item) => (
+          {navLinks.map((item) => (
             <li key={item}>
               <NavLink
                 to={`/${item}`}
                 className={({ isActive }) =>
-                  isActive
-                    ? "text-orange-500 font-semibold"
-                    : "hover:text-orange-500 transition"
+                  `group relative inline-block transition-colors ${
+                    isActive
+                      ? "text-orange-500 font-semibold"
+                      : "text-gray-700 hover:text-orange-500"
+                  }`
                 }
               >
                 {item.toUpperCase()}
+                <span className="absolute left-0 bottom-0 w-full h-0.5 bg-orange-500 scale-x-0 group-hover:scale-x-100 origin-right group-hover:origin-left transition-transform duration-300"></span>
               </NavLink>
             </li>
           ))}
@@ -54,18 +58,21 @@ const Navbar = () => {
           isOpen ? "block animate-slide-down" : "hidden"
         }`}
       >
-        {["home", "product", "about", "blog", "contact"].map((item) => (
+        {navLinks.map((item) => (
           <div key={item}>
             <NavLink
               to={`/${item}`}
-              className={({ isActive }) =>
-                isActive
-                  ? "block text-orange-500 font-semibold"
-                  : "block hover:text-orange-500 transition"
-              }
               onClick={() => setIsOpen(false)}
+              className={({ isActive }) =>
+                `group relative inline-block transition-colors ${
+                  isActive
+                    ? "text-orange-500 font-semibold"
+                    : "text-gray-700 hover:text-orange-500"
+                }`
+              }
             >
               {item.toUpperCase()}
+              <span className="absolute left-0 bottom-0 w-full h-0.5 bg-orange-500 scale-x-0 group-hover:scale-x-100 origin-right group-hover:origin-left transition-transform duration-300"></span>
             </NavLink>
           </div>
         ))}

@@ -26,6 +26,7 @@ const blogs = [
   { id: 20, title: "Explore Caninkart’s Range of Pet Products", date: "May 14, 2025", author: "Tatjana", tag: "Collar", image: blogImg },
 ];
 
+
 const Blog = () => {
   return (
     <>

@@ -4,6 +4,7 @@ import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa';
 import logo1 from '../assets/logo.png';
 import { Link } from 'react-router-dom';
 
+
 const Footer = () => {
   return (
     <footer className="bg-white border-t mt-10 text-sm px-4 py-10">
