@@ -31,7 +31,7 @@ function MarketPlacedetails() {
         <div className="absolute top-4 left-4">
           <button
             onClick={() => navigate(-1)}
-            className="text-white bg-black bg-opacity-50 px-4 py-2 rounded-md"
+            className="text-white bg-black/40 backdrop-blur-md px-4 py-2 rounded-md"
           >
             ← Back
           </button>

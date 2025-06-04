@@ -79,7 +79,7 @@ const DogSection = ({ number, image, description, reverse , bread }) => (
 
     {/* Text Section */}
     <div className=" flex flex-col md:flex-row gap-4 md:gap-6">
-      <h1 className="text-4xl md:text-5xl font-bold text-[#CDDCEA]">{number}</h1>
+      <h1 className="text-4xl md:text-5xl font-bold text-[#CDDCEA] ">{number}</h1>
       <div className="space-y-4 px-4 border-l-2 border-[#CDDCEA]">
         <h2 className="text-2xl md:text-4xl font-[Fredoka One] text-black ">{bread}</h2>
         <p className="font-[Poppins] text-black leading-relaxed whitespace-pre-line text-sm md:text-base max-w-lg">

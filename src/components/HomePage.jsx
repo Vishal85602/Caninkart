@@ -294,8 +294,8 @@ const HomePage = () => {
             .testimonials-swiper .swiper-pagination-bullet {
               background-color: #fb923c;
               opacity: 0.5;
-              width: 10px;
-              height: 10px;
+              width: 5px;
+              height: 5px;
               margin: 0 4px;
               transition: all 0.3s ease;
             }

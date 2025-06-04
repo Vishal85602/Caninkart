@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import dog from "../assets/dogonGrass.png";
+import dog from "../assets/ctf.png";
 
 const ContactForm = () => {
   const [isMdOrLarger, setIsMdOrLarger] = useState(false);
@@ -28,6 +28,14 @@ const ContactForm = () => {
       }
     : { backgroundImage: "none" };
 
+    const bgStyle2 = isMdOrLarger
+    ? {
+        backgroundImage: `url(${dog})`,
+        
+        backgroundRepeat: "no-repeat",
+      }
+    : { backgroundImage: "none" };
+
   return (
     <section className="py-10 px-4 bg-[#FDFDFD] text-center">
       <h2 className="text-sm font-semibold text-orange-500 mb-2">🧡 CONTACT</h2>
@@ -47,6 +55,10 @@ const ContactForm = () => {
           </form>
         </div>
       </div>
+      
+
+      
+
     </section>
   );
 };
